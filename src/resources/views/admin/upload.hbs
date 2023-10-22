@@ -1,0 +1,27 @@
+<div>
+    <h1>Gửi thông báo</h1>
+    
+    <form method="POST" action="/api/fcm/notification/push">
+        <div style="visibility: hidden;" class="form-group">
+            
+            <input name="userId" value="{{userId}}" type="text" class="form-control" id="exampleFormControlInput1" placeholder="id">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Topic</label>
+            <input name="topic" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nhập tpic">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Tên thông báo</label>
+            <input name="title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nhập tên thông báo">
+        </div>
+        
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Nội dung thông báo</label>
+            <input name="body" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nhập nội dung thông báo">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>

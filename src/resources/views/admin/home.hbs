@@ -1,0 +1,32 @@
+<div>
+    <h1>Quản lý người dùng</h1>
+    <a href="/admin/event">Thêm lịch theo chức vụ</a>
+    
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tên</th>
+                <th scope="col">Chức vụ</th>
+                <th scope="col">Thêm lịch theo cá nhân</th>
+                <th scope="col">Gửi thông báo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each user}}
+            <tr>
+                <th scope="row">{{sum @index 1}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.position}}</td>
+                <td>
+                    <a href="/admin/event/person/{{this._id}}">Thêm</a>
+                    
+                </td>
+                <td>
+                    <a href="/admin/upload/{{this._id}}">Gửi</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

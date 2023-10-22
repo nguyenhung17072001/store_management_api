@@ -1,0 +1,34 @@
+<div>
+    <h1>Thêm lịch theo chức vụ</h1>
+
+    <form method="POST" action="/api/event/insert/position">
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select name="position" class="form-control" id="exampleFormControlSelect1">
+                <option value="staff">Nhân viên</option>
+                <option value="manager">Quản lý</option>
+
+         </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Thời gian</label>
+            <input name="time" type="datetime-local" class="form-control" id="exampleFormControlInput1" placeholder="Nhập tpic">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Tên phòng</label>
+            <input name="location" type="text" class="form-control" id="exampleFormControlInput1"
+                placeholder="Nhập tên phòng">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Nội dung lịch</label>
+            <input name="eventName" type="text" class="form-control" id="exampleFormControlInput1"
+                placeholder="Nhập nội dung lịch">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
