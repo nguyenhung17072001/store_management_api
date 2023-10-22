@@ -7,12 +7,12 @@ mongoose.plugin(slug);
 const Schema = mongoose.Schema;
 
 const User = new Schema({
-    username: { type: String, required: true },
+    phone: { type: String, required: true },
     password: { type: String, required: true },
-    position: { type: String, required: true },
     thumb: { type: String, maxLength: 225 },
     name: { type: String, required: true  },
-    address: { type: String, require: true}
+    address: { type: String, require: true},
+    birthday: { type: Date, require: true},
     //createdAt: { type: Date, default: Date.now },
     //updatedAt: { type: Date, default: Date.now },
 

@@ -18,38 +18,38 @@ const fail = {
 class NewsControllers {
   // [Post] api/user/login
   login(req, res, next) {
-    //console.log("body: ", req.body)
-    //console.log("params: ", req.params)
-    //console.log("query: ", req.query)
-    //Create token
-
-    
+    console.log("req.body.phone: ", req.body.phone)
     User.findOne({
-      username: req.body.username.toLowerCase(),
+      phone: req.body.phone,
       password: req.body.password,
     })
       .then((user) => {
         if (user) {
          const token = jwt.sign(
-            { username: user.username, 
+            { phone: user.phone, 
               password: user.password },
             'RESTFULAPIs',
             {
               expiresIn: "2h",
             }
           );
-          
-          //console.log('token: ', token)
+
           res.status(200).json({
             ...success,
             data: {
-              user,
+              _id: user.id,
+              phone: user.phone,
+              address: user.address,
+              birthday: user.birthday,
+              name: user.name,
+              thumb: user.thumb,
+              
               token: `JWT ${token}`
             },
             
           });
         } else {
-          res.json(fail);
+          res.status(400).json(fail);
         }
       })
       .catch(next);
